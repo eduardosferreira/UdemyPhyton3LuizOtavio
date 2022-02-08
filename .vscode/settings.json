@@ -9,10 +9,18 @@
     "python.linting.mypyEnabled": true,
     "python.linting.flake8Enabled": true,
     "python.testing.unittestEnabled": true,
-    //
+    // true
     "[python]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": false//true
     },
-    "window.zoomLevel": 2,
-    "editor.fonteSize": 20   
+    "window.zoomLevel": 1,
+    "editor.fonteSize": 10,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "test*.py"
+    ],
+    "python.testing.pytestEnabled": false
  }

@@ -22,9 +22,9 @@ import sys
 # sys.path.insert(0, '..')
 
 
-def __fnc_load():
+def __fnc_load_path():
     """
-        Funcao de carregamento
+        Funcao de carregamento path
     """
     os.gv_cc_sep_dir = ('/' if os.name == 'posix' else '\\')
     os.gv_cc_path = ""
@@ -39,10 +39,16 @@ def __fnc_load():
         os.gv_cc_path = os.path.join(os.gv_cc_path, dir)
 
 
+# Carrega os dados principais
+__fnc_load_path()
+
+
 def main(*args, **kwargs):
     """
         Funcao principal
     """
+    for arg in args:
+        print(arg)
     print('sep_dir:', os.gv_cc_sep_dir)
     print('path:', os.gv_cc_path)
     print('file:', __file__)
@@ -59,9 +65,6 @@ def fnc_teste_01(p_vl_x: float, p_vl_y: float) -> float:
     return p_vl_x + p_vl_y
 
 
-# Carrega os dados principais
-__fnc_load()
-
 # Processa os dados quando acionado
 if __name__ == '__main__':
-    main()
+    main(sys.argv)

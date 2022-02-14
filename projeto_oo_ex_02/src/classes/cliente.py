@@ -70,9 +70,9 @@ class Pessoa(ABC):
         """
         Pessoa.__NR_INSTANCIA += 1
         # SINGLETON
-        # if not hasattr(cls, '__fl_ja_existe'):
-        cls.__fl_ja_existe = super().__new__(cls)
-        return cls.__fl_ja_existe
+        # if not hasattr(cls, '_fl_ja_existe'):
+        cls._fl_ja_existe = super().__new__(cls)
+        return cls._fl_ja_existe
 
     def __init__(self, p_nm_nome: str, p_cd_codigo: str = None) -> None:
         """Inicializacao da classe

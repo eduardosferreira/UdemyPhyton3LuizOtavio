@@ -1,0 +1,48 @@
+
+var ftGUID_5677791="515142AC9B028F";
+var ftConfID_5677791="0";
+var ftParams_5677791="ft_custom=324636610&imageType=gif&ftDestID=31017069&ft_width=1&ft_height=1&click=&ftOBA=0&ftExpTrack=&gdpr=&gdpr_consent=&us_privacy=${US_PRIVACY}&ft_section=26371284_324636610_516561848_164175537&ft_custom=324636610&cachebuster=3044448422";
+var ftKeyword_5677791="";
+var ftCustom_5677791="324636610";
+var ftSection_5677791="26371284_324636610_516561848_164175537";
+var ftSegment_5677791="xe7,adnx,xfa,adnw";
+var ftSegmentList_5677791=[{s:'xe7'},{s:'adnx'},{s:'xfa'},{s:'adnw'}];
+var ftRuleMatch_5677791="0";
+var ftTimestamp_5677791="1644600440";
+var ftGeoC2_5677791="br";
+var ftGeoState_5677791="mg";
+var ftGeoCity_5677791="uberlandia";
+var ftISP_5677791="algar telecom sa";
+var ftSpeed_5677791="broadband";
+var ftDMA_5677791="76088";
+var ftLong_5677791="-48.26";
+var ftLat_5677791="-18.91";
+var ftPostal_5677791="38400-010";
+var ftTimeZone_5677791="-300";
+var ftMobileCarrier_5677791="";
+var ftImp5677791 = {};
+ftImp5677791.privacy = "x";
+ftImp5677791.guidAge = "4";
+ftImp5677791.impID = "297DAA1D-B683-CDD4-D735-D405BE77B984";
+ftImp5677791.duid = "FT:515142AC9B028F";
+
+ftImp5677791.ft_tpplid = "";
+ftImp5677791.ft_c = {};
+ftImp5677791.gdpr = "";
+ftImp5677791.gdpr_consent = "";
+ftImp5677791.gdpr_pd = "";
+ftImp5677791.oob_consent = "";
+ftImp5677791.gdprStoredConsent = "";
+ftImp5677791.us_privacy = "!!US_PRIVACY!";
+
+ftImp5677791.jsAppend = "1";
+(function(){
+    var tag = document.getElementById('ft_servedby_5677791') || (function(s){
+    	return s[s.length-1];
+    }(document.getElementsByTagName('script'))),
+           js = document.createElement('script');
+    js.src =
+"https://cdn.flashtalking.com/xre/567/5677791/2863405/js/j-5677791-2863405.js";
+    js.id = "ftscript_m5677791";
+    tag.parentNode.insertBefore(js, tag);
+}());

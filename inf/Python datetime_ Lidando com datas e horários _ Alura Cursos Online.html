@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"><title>Python datetime: Lidando com datas e horários | Alura Cursos Online</title><meta name="description" content="Foramtação, timezone e o módulo datetime. Saiba como lidar com fuso horário e datas utilizando python com exemplos práticos"><link rel="canonical" href="https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"><link rel="icon" href="https://www.alura.com.br/assets/favicon.1636535197.ico"><link href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/css" rel="stylesheet" crossorigin=""><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/titulos.1636535197.css"><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/index.1642791756.css"><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/highlight.1636535198.css"><meta property="og:locale" content="pt_BR"><meta property="og:description" content="Foramtação, timezone e o módulo datetime. Saiba como lidar com fuso horário e datas utilizando python com exemplos práticos"><meta property="og:title" content="Python datetime: Lidando com datas e horários | Alura Cursos Online"><meta property="og:site_name" content="Alura"><meta property="og:url" content="https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"><meta property="og:image" content="https://www.alura.com.br/artigos/assets/code/lidando-com-datas-e-horarios-no-python.1644589179.png"><meta property="og:image:alt" content="Alura logo"><meta property="fb:app_id" content="140078819399376"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#2A7AE4"><meta name="thumbnail" content="https://www.alura.com.br/artigos/assets/code/lidando-com-datas-e-horarios-no-python.1644589179.png"> <script type="text/javascript" async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/23465.js.download"></script><script type="text/javascript" async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/f.txt"></script><script type="text/javascript" async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/insight.min.js.download"></script><script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/1067810189950610" async=""></script><script async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/fbevents.js.download"></script><script async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/gtm.js.download"></script><script>;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TN542JN');</script> <script async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/hotjar-1029027.js.download"></script><script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/sha256.min.js.download"></script><script async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/modules.855de5fca5328f4d913a.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/f(1).txt"></script></head><body class=""> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/avatarOnError.1636535198.js.download"></script> <noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-TN542JN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1067810189950610'); fbq('track', 'PageView');</script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/courseIconFallback.1636535198.js.download"></script>  <script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.alura.com.br",
+          "name": "Alura"
+        }
+      }   
+              ,{
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos",
+            "name": "Artigos"
+          }
+        }
+              ,{
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos/programacao",
+            "name": "Programação"
+          }
+        }
+              ,{
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python",
+            "name": "Python datetime: Lidando com datas e horários"
+          }
+        }
+            ]
+    }</script> <link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/header.1638241251.css"><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/dia-do-programador.1636535197.css"><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/countdown.1636535197.css"><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/header.1638241251.css"><header class="header"><div class="container"><nav class="header__nav">
+<a href="https://www.alura.com.br/" class="header__nav__link header__nav__link--logo">
+<img class="header__nav__link__logo" alt="Alura" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/alura-logo-white.1636535197.svg">
+</a><div class="header__nav__wrapper header__nav__wrapper--ctas"><div class="header-utilitario-busca" aria-label="Busca">
+<svg class="header-utilitario-busca-icone--home" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="/svg,1636535197/header#icon-header-busca-home"></use>
+</svg></div>
+<a href="https://cursos.alura.com.br/loginForm?urlAfterLogin=https://cursos.alura.com.br/dashboard" class="header__nav__link header__nav__link--entrar">Entrar</a>
+<a href="https://www.alura.com.br/planos-cursos-online" class="header__nav__link header__nav__link--cta">Matricule-se</a></div><div class="header-barraBusca__wrapper"><div class="header-barraBusca"><div class="container"><form action="https://www.alura.com.br/busca" class="header-barraBusca-form">
+<label for="header-barraBusca-form-campoBusca">Qual curso procura?</label>
+<input type="search" id="header-barraBusca-form-campoBusca" name="query" class="header-barraBusca-form-serch-input" placeholder="O que você quer aprender?">
+<button class="header-barraBusca-form-submit" type="submit"></button></form></div></div></div><div class="nav__courses__wrapper header__nav__wrapper header__nav__wrapper--menu"><div class="nav__courses__link header-navegacao-cursos">
+<svg class="header-navegacao-cursos-icone" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="/svg,1605191409/header#icon-header-icon-arrow"></use>
+</svg>
+<span>Todos os</span>
+<span>Cursos</span></div>
+<a href="https://www.alura.com.br/formacoes" class="nav__courses__link">
+<span>Nossas</span>
+<span>Formações</span>
+</a>
+<a href="https://www.alura.com.br/empresas" class="nav__courses__link">
+<span>Para</span>
+<span>Empresas</span>
+</a>
+<a href="https://www.alura.com.br/dev-em-t" class="nav__courses__link">
+<span>Dev</span>
+<span>em  &lt;T&gt;</span>
+</a></div></nav></div><div class="--border-header-top"><div class="container"><ul class="header-navegacao-cursos-lista"><li class="header-cursos-lista-categoria ">
+<a href="https://www.alura.com.br/escola-programacao" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Programação</span></div>
+</a><div class="header-color--link" style="color: #00c86f;"></div></li><li class="header-cursos-lista-categoria ">
+<a href="https://www.alura.com.br/escola-front-end" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Front-end</span></div>
+</a><div class="header-color--link" style="color: #6bd1ff;"></div></li><li class="header-cursos-lista-categoria ">
+<a href="https://www.alura.com.br/escola-data-science" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Data Science</span></div>
+</a><div class="header-color--link" style="color: #9cd33b;"></div></li><li class="header-cursos-lista-categoria ">
+<a href="https://www.alura.com.br/escola-devops" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>DevOps</span></div>
+</a><div class="header-color--link" style="color: #f16165;"></div></li><li class="header-cursos-lista-categoria ">
+<a href="https://www.alura.com.br/escola-design-ux" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>UX &amp; Design</span></div>
+</a><div class="header-color--link" style="color: #dc6ebe;"></div></li><li class="header-cursos-lista-categoria ">
+<a href="https://www.alura.com.br/escola-mobile" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Mobile</span></div>
+</a><div class="header-color--link" style="color: #ffba05;"></div></li><li class="header-cursos-lista-categoria ">
+<a href="https://www.alura.com.br/escola-inovacao-gestao" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Inovação &amp; Gestão</span></div>
+</a><div class="header-color--link" style="color: #ff8c2a;"></div></li></ul></div></div></header><section class="cosmos-container-color"><div class="cosmos-color"><div class="cosmos artigos-topo"><div class="container">
+<a href="https://www.alura.com.br/artigos" class="artigos-topo__label">
+Artigos
+</a>
+&gt;
+<a class="artigos-topo__label --artigos-strong" href="https://www.alura.com.br/artigos/programacao" style="color:#00c86f">Programação</a></div></div></div>
+ <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"
+  },
+  "headline": "Python datetime: Lidando com datas e horários",
+  "description": "Foramtação, timezone e o módulo datetime. Saiba como lidar com fuso horário e datas utilizando python com exemplos práticos",
+  "image": "https://www.alura.com.br/artigos/assets/code/lidando-com-datas-e-horarios-no-python.1644589179.png",
+  "datePublished": "2018-03-22",
+    "dateModified": "2018-03-22",
+    "author": {
+        "@type": "Organization",
+    "name": "Alura"
+      },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Alura",
+    "url": "https://www.alura.com.br",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.alura.com.br/assets/img/amp/logo-publisher.1636535197.png",
+      "height" : 60, 
+      "width" : 600 
+    }
+  }
+}</script> <section class="cosmos-color"><article class="cosmos"><div class="cosmos-header"><h1>Python datetime: Lidando com datas e horários</h1><div class="cosmos-image__wrapper">
+<img src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/lidando-com-datas-e-horarios-no-python.1644589179.png" alt="Python datetime: Lidando com datas e horários" class="cosmos-image cosmos-banner-top" style="border: none; padding: 0px; width: 100%; height: 300px; object-fit: cover; max-width: none;"></div><div class="cosmos-header-info"><div class="cosmos-author">
+<img class="cosmos-author-img" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/5ec17c8a1987776b1bcf33c6dcb8927e.png" alt="Yan Orestes" width="50" height="50"><div><div class="cosmos-author-name">Yan Orestes</div>
+<time class="cosmos-author-date" datetime="2018-03-22 12:38">22/03/2018</time></div></div><div class="cosmos-container-social-media"><p class="cosmos-text-social-media">Compartilhe</p><ul class="cosmos-container-flex-social-media"><li class="--icon-twitter">
+<a href="https://twitter.com/share?url=https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"></a></li><li class="--icon-linkedin">
+<a href="https://linkedin.com/shareArticle?url=https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"></a></li><li class="--icon-facebook">
+<a href="https://facebook.com/share.php?u=https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"></a></li><li class="--icon-whatsapp">
+<a href="https://api.whatsapp.com/send?text=https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"></a></li></ul></div><div class="cosmos-related-gruides"><div class="cosmos-related-item cosmos-related-item__formacao">
+<a class="cosmos-related-link-formacao" href="https://www.alura.com.br/formacao-Python-linguagem"><div class="cosmos-flex--text">
+<img class="cosmos-related-item-image" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/programacao.svg"><div class="cosmos--margin"><p class="cosmos-text-category">Esse artigo faz parte da</p><p class="cosmos-related-item-title">Formação Python</p></div></div>
+</a></div></div></div></div><div class="cosmos-header-line"></div><p>Vamos a um exemplo concreto de <strong>datas</strong> e <strong>horários</strong> para poder <a href="https://www.alura.com.br/formacao-Python-linguagem">programar em Python</a> e com o módulo <code>datetime</code>: Uma empresa nos contratou para implementar o sistema de pontos deles, controlando quando um funcionário chega e sai. O sistema deve exibir a data e a hora a cada registro, como confirmação para o funcionário.</p><h2>date do datetime</h2><p>Conhecemos o módulo <strong><a href="https://docs.python.org/3/library/datetime.html" target="_blank" rel="noopener">datetime</a></strong> da biblioteca nativa do <a href="https://www.alura.com.br/cursos-online-programacao/python"><strong>Python</strong></a>, então até sabemos pegar a data atual através da classe <strong><a href="https://docs.python.org/3/library/datetime.html#date-objects" target="_blank" rel="noopener">date</a></strong>, basta a importarmos e chamarmos o método <strong><code>today()</code></strong>:</p><pre><code class="hljs python"><span class="hljs-keyword"><span class="hljs-keyword">from</span></span> datetime <span class="hljs-keyword"><span class="hljs-keyword">import</span></span> date
+
+data_atual = date.today()
+print(data_atual)</code></pre><p>Como esperado:</p><pre><code class="hljs python"><span class="hljs-number"><span class="hljs-number">2018</span></span><span class="hljs-number">-03</span><span class="hljs-number">-01</span></code></pre><p>Mas calma… como esperado? Seria legal se conseguíssemos imprimir a data no formato brasileiro <strong><code>DD/MM/AAAA</code></strong> para evitar confusões! O problema é que o <strong><code>date</code></strong> automaticamente força o <strong>padrão ANSI</strong> sempre que tentamos imprimir.</p><h2>Formatando nossa data em uma string</h2><p>Como a classe <code>date</code> consegue nos fornecer separadamente cada seção da data, podemos resolver esse problema com uma simples <strong>formatação de string</strong>:</p><pre><code class="hljs python">data_em_texto = ‘{}/{}/{}’.<span class="hljs-built_in">format</span>(data_atual.day, data_atual.month,
+data_atual.year)</code></pre><p>Que resulta em:</p><pre><code class="hljs python"><span class="hljs-number"><span class="hljs-number">1</span></span>/<span class="hljs-number"><span class="hljs-number">3</span></span>/<span class="hljs-number"><span class="hljs-number">2018</span></span></code></pre><p>Já melhorou bastante, mas ainda não é exatamente o que queríamos. Repare que tanto o dia como o mês estão sem o prefixo <strong>0</strong>, saindo do padrão pretendido. Nesse caso poderíamos até contornar isso simplesmente adicionando um <strong>0</strong> antes:</p><pre><code class="hljs python">data_em_texto = ‘<span class="hljs-number"><span class="hljs-number">0</span></span>{}/<span class="hljs-number"><span class="hljs-number">0</span></span>{}/{}’.<span class="hljs-built_in">format</span>(data_atual.day, data_atual.month,
+data_atual.year)</code></pre><p>O que daria certo, mas traria problemas caso o dia ou o mês fossem maiores ou iguais a 10:</p><pre><code class="hljs python"><span class="hljs-number">010</span>/<span class="hljs-number">010</span>/<span class="hljs-number"><span class="hljs-number">2018</span></span></code></pre><p>São problemas e funcionalidades comuns que passamos durante nossos cursos da formação <a href="https://www.alura.com.br/formacao-Python-linguagem">Python para web</a> na Alura!</p><h2>Formatando datas em strings usando o método strftime()</h2><p>Para evitar maiores complicações, a classe <code>date</code> soluciona isso com um único método - o <strong><code>strftime()</code></strong>, que toma como parâmetro a formatação que queremos em nossa string de data e, desse modo, nos dá maior liberdade para decidirmos como queremos exibir a data.</p><p>Esta formatação usa códigos melhor explicados na <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior" target="_blank" rel="noopener">documentação</a>. Ao final do texto, também damos uma explicação breve neles. No nosso caso fica assim:</p><pre><code class="hljs python">data_em_texto = data_atual.strftime(‘%d/%m/%Y’)
+print(data_em_texto)</code></pre><p>E agora sim:</p><pre><code class="hljs python"><span class="hljs-number">01</span>/<span class="hljs-number">03</span>/<span class="hljs-number"><span class="hljs-number">2018</span></span></code></pre><p>Ou, no caso do nosso exemplo que resultou em <code>010/010/2018</code>:</p><pre><code class="hljs python"><span class="hljs-number"><span class="hljs-number">10</span></span>/<span class="hljs-number"><span class="hljs-number">10</span></span>/<span class="hljs-number"><span class="hljs-number">2018</span></span></code></pre><p>Agora só precisamos dar um jeito de armazenar o horário também. Quem será que pode cuidar disso? Como você deve ter imaginado, o mesmo módulo <code>datetime</code> do qual importamos a classe <code>date</code> também possui classes que facilitam a manipulação de horários.</p><h2>O tipo datetime para cuidar de datas e horários juntos</h2><p>Enquanto podemos sim usar o tipo <strong><a href="https://docs.python.org/3.6/library/datetime.html#time-objects" target="_blank" rel="noopener">time</a></strong>, destinado exclusivamente para horários, o módulo nos dá uma solução muito mais apropriada para o nosso problema com o tipo <strong><a href="https://docs.python.org/3/library/datetime.html#datetime-objects" target="_blank" rel="noopener">datetime</a></strong> - <strong>sim, tem o mesmo nome do módulo, cuidado com a confusão!</strong></p><p>Uma das vantagens da classe <code>datetime</code> é que ela consegue cuidar da data e do horário ao mesmo tempo. A única diferença em nosso uso é que, em vez do método <code>today()</code>, usaremos o método <strong><code>now()</code></strong>:</p><pre><code class="hljs python"><span class="hljs-keyword"><span class="hljs-keyword">from</span></span> datetime <span class="hljs-keyword"><span class="hljs-keyword">import</span></span> datetime
+
+data_e_hora_atuais = datetime.now()
+data_e_hora_em_texto = data_e_hora_atuais.strftime(‘%d/%m/%Y’)
+
+print(data_e_hora_em_texto)</code></pre><p>O resultado é como o anterior:</p><pre><code class="hljs python"><span class="hljs-number">01</span>/<span class="hljs-number">03</span>/<span class="hljs-number"><span class="hljs-number">2018</span></span></code></pre><p>Opa! Apesar de já estarmos usando a classe <code>datetime</code>, que incorpora o horário, precisamos declarar na formatação que passamos como parâmetro para o <code>strftime()</code> que queremos mostrar a hora e o minuto, também:</p><pre><code class="hljs python">data_e_hora_em_texto = data_e_hora_atuais.strftime(‘%d/%m/%Y %H:%M’)
+
+print(data_e_hora_em_texto)</code></pre><p>e agora sim:</p><pre><code class="hljs python"><span class="hljs-number">01</span>/<span class="hljs-number">03</span>/<span class="hljs-number"><span class="hljs-number">2018</span></span> <span class="hljs-number"><span class="hljs-number">12</span></span>:<span class="hljs-number"><span class="hljs-number">30</span></span></code></pre><p>Perfeito! Até agora aprendemos a pegar a data atual com a classe <code>date</code>, <code>datetime</code> e até aprendemos a <strong>formatar datas</strong>, transformando-as em strings. Mas e se precisássemos fazer o caminho contrário?</p><h2>Convertendo uma string em datetime</h2><p>Se tivéssemos uma string de data e quiséssemos transformar em <code>datetime</code>, o que faríamos?Novamente, um simples método resolve tudo, dessa vez o <strong>strptime()</strong>, da própria classe <code>datetime</code>:</p><pre><code class="hljs python"><span class="hljs-keyword"><span class="hljs-keyword">from</span></span> datetime <span class="hljs-keyword"><span class="hljs-keyword">import</span></span> datetime
+
+data_e_hora_em_texto = ‘<span class="hljs-number">01</span>/<span class="hljs-number">03</span>/<span class="hljs-number"><span class="hljs-number">2018</span></span> <span class="hljs-number"><span class="hljs-number">12</span></span>:<span class="hljs-number"><span class="hljs-number">30</span></span>’
+data_e_hora = datetime.strptime(data_em_texto, ‘%d/%m/%Y %H:%M’)</code></pre><p>E tudo certo! Entretanto, o chefe da empresa foi testar o programa em outros computadores e alguns imprimiam horários diferentes. Por quê?</p><h2>O problema do fuso horário (timezone)</h2><p>Chequei as configurações de um desses computadores e descobri que o relógio dele estava com um fuso horário diferente do daqui de São Paulo, onde está a empresa.</p><p>Não podemos deixar que o <strong>tempo no nosso programa dependa de cada máquina</strong>, porque não temos como garantir que todas as máquinas que rodarem esse programa estarão com o fuso horário que queremos. O ideal, então, seria forçar o fuso horário de São Paulo.</p><h2>Fuso horário com a classe timezone</h2><p>A partir do <strong>Python 3</strong>, temos a classe <strong><a href="https://docs.python.org/3/library/datetime.html#timezone-objects" target="_blank" rel="noopener">timezone</a></strong>, também do módulo <code>datetime</code>:</p><pre><code class="hljs python"><span class="hljs-keyword"><span class="hljs-keyword">from</span></span> datetime <span class="hljs-keyword"><span class="hljs-keyword">import</span></span> datetime, timezone
+
+data_e_hora_atuais = datetime.now()
+fuso_horario = timezone()
+print(fuso_horario)</code></pre><p>Vamos ver o que é impresso na tela:</p><pre><code class="hljs python">Traceback (most recent call last):
+  File <span class="hljs-string"><span class="hljs-string">"teste.py"</span></span>, line <span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> &gt;
+    fuso_horario = timezone()
+TypeError: Required argument <span class="hljs-string"><span class="hljs-string">'offset'</span></span> (pos <span class="hljs-number"><span class="hljs-number">1</span></span>) <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> found</code></pre><p>A exceção <strong><code>TypeError</code></strong> que recebemos indica que o argumento <strong><code>offset</code></strong>, esperado no construtor <code>timezone</code>, não foi encontrado. Realmente, não colocamos esse argumento. Mas o que ele significa?</p><p>O parâmetro <code>offset</code> representa a diferença entre o fuso horário que queremos criar e o <a href="https://pt.wikipedia.org/wiki/Tempo_Universal_Coordenado" target="_blank" rel="noopener">Tempo Universal Coordenado</a> (UTC). No nosso caso, em São Paulo, temos uma diferença de -3 horas, mais conhecida como <strong>UTC-3</strong>. Sabendo disso, vamos tentar novamente:</p><pre><code class="hljs python">fuso_horario = timezone(<span class="hljs-number">-<span class="hljs-number">3</span></span>)
+print(fuso_horario)</code></pre><p>Agora que configuramos o parâmetro <code>offset</code>, vamos ver o que aparece na tela:</p><pre><code class="hljs python">Traceback (most recent call last):
+  File <span class="hljs-string"><span class="hljs-string">"teste.py"</span></span>, line <span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> &lt;module&gt;
+    fuso_horario = timezone(<span class="hljs-number">-<span class="hljs-number">3</span></span>)
+TypeError: timezone() argument <span class="hljs-number"><span class="hljs-number">1</span></span> must be datetime.timedelta, <span class="hljs-keyword"><span class="hljs-keyword">not</span></span> <span class="hljs-built_in">int</span></code></pre><p>Dessa vez a mensagem da exceção é diferente, indicando que o argumento passado para o construtor <code>timezone</code> deve ser do tipo <strong><code>datetime.timedelta</code></strong>, não um número inteiro, que foi o que passamos.</p><h2>Calcular a diferença de horários com a classe timedelta</h2><p>A classe <strong><a href="https://docs.python.org/3/library/datetime.html#timedelta-objects" target="_blank" rel="noopener">timedelta</a></strong> tem a finalidade de representar uma duração e, no nosso caso, uma diferença entre horários. Vamos, agora, instanciá-la em uma variável e tentar imprimir, para ver o que acontece:</p><pre><code class="hljs python">diferenca = timedelta()
+print(diferenca)</code></pre><p>Olha o que apareceu:</p><pre><code class="hljs python"><span class="hljs-number"><span class="hljs-number">0</span></span>:<span class="hljs-number"><span class="hljs-number">00</span></span>:<span class="hljs-number"><span class="hljs-number">00</span></span></code></pre><p>Tudo bem, 0 dias, 0 horas e 0 minutos. Mas precisamos que nosso objeto <code>timedelta</code> corresponda à diferença do <strong>UTC</strong>, as -3 horas:</p><pre><code class="hljs python">diferenca = timedelta(<span class="hljs-number">-<span class="hljs-number">3</span></span>)
+print(diferenca)</code></pre><p>E agora, o que aparece?</p><pre><code class="hljs python"><span class="hljs-number">-<span class="hljs-number">3</span></span> days, <span class="hljs-number"><span class="hljs-number">0</span></span>:<span class="hljs-number"><span class="hljs-number">00</span></span>:<span class="hljs-number"><span class="hljs-number">00</span></span></code></pre><p>Mas o quê? -3 dias? A gente queria -3 horas! O problema é que o construtor <code>timedelta</code> recebe vários outros argumentos além da hora, nessa ordem:</p><ul><li><strong><em>days</em></strong> (dias)</li><li><strong><em>seconds</em></strong> (segundos)</li><li><strong><em>microseconds</em></strong> (microsegundos)</li><li><strong><em>milliseconds</em></strong> (milisegundos)</li><li><strong><em>minutes</em></strong> (minutos)</li><li><strong><em>hours</em></strong> (horas)</li><li><strong><em>weeks</em></strong> (semanas)</li></ul><p>Então se a gente só manda um <strong>-3</strong> para ele, esse número é interpretado como se fosse em dias. Podemos passar <strong>0</strong> para os primeiros 5 parâmetros e <strong>-3</strong> para as horas, mas isso é um pouco estranho, considerando que, de fato, <strong>queremos definir apenas as horas</strong>.</p><p>Usando a funcionalidade que o <a href="https://www.alura.com.br/cursos-online-programacao/python">Python</a> tem dos <strong>parâmetros nomeados</strong>, é possível especificar que estamos definindo o parâmetro de horas (<em>hours</em>), da seguinte forma:</p><pre><code class="hljs python">diferenca = timedelta(hours=<span class="hljs-number">-<span class="hljs-number">3</span></span>)
+print(diferenca)</code></pre><p>E dessa vez:</p><pre><code class="hljs python"><span class="hljs-number">-<span class="hljs-number">1</span></span> day, <span class="hljs-number"><span class="hljs-number">21</span></span>:<span class="hljs-number"><span class="hljs-number">00</span></span>:<span class="hljs-number"><span class="hljs-number">00</span></span></code></pre><p>Ué, se a gente colocou <code>-3</code>, por que apareceu tudo isso? Acontece que o <code>timedelta</code> entende <strong>-3 horas</strong> como <strong>0 dias, 0 horas e 0 minutos - 3 horas</strong>, ou seja, <strong>-1 dia,21 horas</strong>.</p><h2>Resolvendo o problema do fuso horário</h2><p>Vamos, agora, criar um objeto timezone correspondente ao <strong>UTC-3</strong>, indicando essa diferença do <strong>UTC</strong> como parâmetro do construtor:</p><pre><code class="hljs python">fuso_horario = timezone(diferenca)
+print(fuso_horario)</code></pre><p>Temos justamente o que queríamos:</p><pre><code class="hljs python">UTC<span class="hljs-number">-03</span>:<span class="hljs-number"><span class="hljs-number">00</span></span></code></pre><p>Finalmente, podemos converter o tempo da máquina para o de São Paulo, usando o método <strong><code>astimezone()</code></strong>:</p><pre><code class="hljs python">data_e_hora_sao_paulo = data_e_hora_atuais.astimezone(fuso_horario)
+data_e_hora_sao_paulo_em_texto = data_e_hora_sao_paulo.strftime(‘%d/%m/%Y %H:%M’)
+
+print(data_e_hora_sao_paulo_em_texto)</code></pre><p>Agora está tudo padronizado:</p><pre><code class="hljs python"><span class="hljs-number">01</span>/<span class="hljs-number">03</span>/<span class="hljs-number"><span class="hljs-number">2018</span></span> <span class="hljs-number"><span class="hljs-number">12</span></span>:<span class="hljs-number"><span class="hljs-number">30</span></span></code></pre><p>Temos tudo resolvido com o fuso horário agora, mas e se fossemos mostrar nosso código para outro programador, ele entenderia o que significa o <code>-3</code>? Não fica muito fácil, né?</p><p>Aliás, para todo fuso horário teríamos que pesquisar qual a sua diferença do UTC, o que é um problema chato. Será que não há uma maneira mais simples e elegante para resolver essa questão?</p><h2>Resolvendo o problema dos fusos horários com o pytz</h2><p>A <strong>comunidade Python</strong>, frente a essa necessidade, criou diversas bibliotecas para facilitar a manipulação de <em>timezones</em>, como a <strong><a href="https://pythonhosted.org/pytz/" target="_blank" rel="noopener">pytz</a></strong>. Para instalar a <code>pytz</code>, você pode usar o <strong><a href="https://pypi.python.org/pypi/pip" target="_blank" rel="noopener">pip</a></strong> pelo terminal:</p><pre><code class="hljs python">pip install pytz</code></pre><blockquote><p>A instalação em sistemas baseados em UNIX provavelmente necessitará de permissão <code>sudo</code>.</p></blockquote><p>Instalada, podemos importar sua classe <code>timezone</code> e fica fácil de pegarmos o fuso horário que queremos:</p><pre><code class="hljs python"><span class="hljs-keyword"><span class="hljs-keyword">from</span></span> datetime <span class="hljs-keyword"><span class="hljs-keyword">import</span></span> datetime
+<span class="hljs-keyword"><span class="hljs-keyword">from</span></span> pytz <span class="hljs-keyword"><span class="hljs-keyword">import</span></span> timezone
+
+data_e_hora_atuais = datetime.now()
+fuso_horario = timezone(‘America/Sao_Paulo’)
+data_e_hora_sao_paulo = data_e_hora_atuais.astimezone(fuso_horario)
+data_e_hora_sao_paulo_em_texto = data_e_hora_sao_paulo.strftime(‘%d/%m/%Y %H:%M’)
+
+print(data_e_hora_sao_paulo_em_texto)
+</code></pre><p>Repare que nós colocamos o <code>timezone</code> como <code>America/Sao_Paulo</code>. Mas e se quisermos saber outras possibilidades? É possível ver a lista de fusos horários suportados pelo <code>pytz</code> iterando sobre o <strong><code>pytz.all_timezones</code></strong>:</p><pre><code class="hljs python"><span class="hljs-keyword"><span class="hljs-keyword">import</span></span> pytz
+
+<span class="hljs-keyword"><span class="hljs-keyword">for</span></span> tz <span class="hljs-keyword"><span class="hljs-keyword">in</span></span> pytz.all_timezones:
+    print(tz)</code></pre><p>Trabalhar com datas pra gente não será mais um problema!</p><h3>Mais Python e Datas</h3><p>Ao longo desse post, usamos diversas vezes alguns códigos de formatação de datas, como por exemplo o padrão <code>%d/%m/%Y %H:%M</code>. Mas o que significa isso?</p><p>Esses códigos são definidos pela <strong><a href="http://man7.org/linux/man-pages/man3/strftime.3.html" target="_blank" rel="noopener">documentação do strftime(3)</a></strong>. Os usados em nossos exemplos são:</p><ul><li><strong><code>%d</code></strong> - O dia do mês representado por um número decimal (de 01 a 31)</li><li><strong><code>%m</code></strong> - O mês representado por um número decimal (de 01 a 12)</li><li><strong><code>%Y</code></strong> - O ano representado por um número decimal incluindo o século</li><li><strong><code>%H</code></strong> - A hora representada por um número decimal usando um relógio de 24 horas (de 00 a 23)</li><li><strong><code>%M</code></strong> - O minuto representado por um número decimal (de 00 a 59)</li></ul><h3>Conclusão</h3><p>Começamos o post com a necessidade de <strong>manipular datas com o Python</strong> e vimos como fazer isso utilizando o tipo <code>date</code>. Aprendemos a juntar nossa data a um horário através da classe <code>datetime</code>, e como formatar essas informações em uma string de fácil leitura para nós.</p><p>Acabamos tendo um problema com o fuso horário e vimos como resolver com a classe <code>timezone</code> no <strong>Python 3</strong>. Também vimos uma maneira mais simples de solucionar esse problema com a biblioteca <code>pytz</code>, feita pela comunidade Python.</p><p>E aí? Vai ser mais fácil <strong>lidar com datas usando o Python</strong> a partir de agora, não acha? Gostou? Quer aprender mais? Confira a formação de <strong><a href="https://www.alura.com.br/formacao-Python-linguagem">Python para web</a> na Alura!</strong></p><div class="cosmos-related-articles"><h5 class="cosmos-related-articles-title">Leia também:</h5><ul class="cosmos-related-articles-list"><li><a href="https://www.alura.com.br/artigos/trabalhando-com-o-dicionario-no-python">Python: Trabalhando com dicionários</a></li><li><a href="https://www.alura.com.br/artigos/a-diferenca-das-funcoes-input-e-raw-input-no-python">Python: A diferença das funções input() e raw_input() </a></li><li><a href="https://www.alura.com.br/artigos/como-comparar-objetos-no-python">Como comparar objetos no Python?</a></li><li><a href="https://www.alura.com.br/artigos/o-que-sao-iteradores-no-python">Python: Saiba o que são iteradores</a></li><li><a href="https://www.alura.com.br/artigos/formatando-moeda-no-python">Python: Formatação de moeda e internacionalização</a></li><li><a href="https://www.alura.com.br/artigos/qual-a-diferenca-entre-e-is-no-python">Python: Qual a diferença entre == e is? </a></li></ul></div></article></section><div class="cosmos-other-files"><div class="container --container-banner-flex"><div class="categories-artigos" style="background:#00c86f;">
+<svg class="categories-artigos-icon" style="fill:#ffffff" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="/svg,1636535197/categorias#icon-categorias-programacao"></use>
+</svg></div><p class="cosmos-other-files-text">Veja outros artigos sobre <a href="https://www.alura.com.br/artigos/programacao" style="color:#00c86f">Programação</a></p></div></div><div class="cosmos-color"><div class="cosmos --newsletter-spacing"><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/subscribeNewsletterCard.1636535197.css"><div class="subscribeNewsletterCard-container"><section class="subscribeNewsletterCard-wrapper"><div class="subscribeNewsletterCard-decoration"></div><div class="subscribeNewsletterCard-busca-box container"><div class="subscribeNewsletterCard-box-texto"><p class="subscribeNewsletterCard-texto-bold">Quer mergulhar em tecnologia e aprendizagem?</p><p class="subscribeNewsletterCard-texto-normal">Receba a newsletter que o nosso CEO escreve pessoalmente,
+com insights do mercado de trabalho, ciência e desenvolvimento de software</p></div><form id="subscribeNewsletterCard__activecampaign" class="subscribeNewsletterCard-form" action="https://www.alura.com.br/api/activecampaign" method="POST">
+<input type="hidden" name="list" value="14">
+<input type="hidden" name="retorno" value="/newsletter-cadastrado">
+<input class="activecampaign-input subscribeNewsletterCard-input" id="activecampaing-email" type="email" placeholder="Escreva seu email" name="email" required="">
+<button class="activecampaign-button subscribeNewsletterCard-button" type="submit">Me inscreva</button><input type="hidden" name="full_url" value="https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"><input type="hidden" name="user_agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"><input type="hidden" name="referral" value="https://www.google.com/"></form></div></section></div> <script>(function() {
+            function criaCampo(nome, valor, form) {
+                if (valor === null) return;
+
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = nome;
+                input.value = valor;
+
+                form.appendChild(input);
+            }
+
+            function param(name) {
+                var url = location.href;
+                name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+                var regexS = "[\\?&]"+name+"=([^&#]*)";
+                var regex = new RegExp( regexS );
+                var results = regex.exec( url );
+                return results == null ? null : results[1];
+            }
+
+            function showNewsletterError() {
+                document.querySelector('.newsletter-message-error').classList.remove('newsletter-message-error--disabled');
+            }
+
+            function valida() {
+                var isValid = true;
+                var inputList = document.querySelector('#subscribeNewsletterCard__activecampaign')['list'];
+                var inputEmail = document.querySelector('#subscribeNewsletterCard__activecampaign')['email'];
+
+                isValid = validaEmail(inputEmail.value) && validaList(inputList.value);
+
+                if(!isValid) {
+                    showNewsletterError();
+                }
+
+                return isValid;
+            }
+
+            function validaList(list) {
+                return list != '-1';
+            }
+
+            function validaEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+
+            var form = document.querySelector('#subscribeNewsletterCard__activecampaign');
+            if(!form) return;
+
+            criaCampo('utm_source', param('utm_source'), form);
+            criaCampo('utm_campaign', param('utm_campaign'), form);
+            criaCampo('utm_medium', param('utm_medium'), form);
+            criaCampo('utm_term', param('utm_term'), form);
+            criaCampo('utm_content', param('utm_content'), form);
+            criaCampo('full_url', location.href, form);
+            criaCampo('user_agent', navigator.userAgent, form);
+            criaCampo('referral', document.referrer, form);
+
+            form.onsubmit = valida;
+
+        })();</script> </div></div></section> <script async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/ei.js.download"></script> <link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/footer.1638241251.css"><footer class="footer"><div class="container"><div class="footer-navegue"><h2 class="footer-navegacao-titulo">Navegação</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/planos-cursos-online" gtm-data="footer_primeira_secao_053">Planos</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/cursos-online-tecnologia" gtm-data="footer_primeira_secao_054">Todos os cursos</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/cases">Alura Cases</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/guias">Guia de carreira</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/instrutores" gtm-data="footer_primeira_secao_056">Instrutores</a></li><li class="footer-navegue-lista-link"><a href="https://grupoalura.gupy.io/">Trabalhe conosco</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/quero-ser-instrutor" gtm-data="footer_primeira_secao_057">Como virar instrutor</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/artigos" gtm-data="footer_primeira_secao_058">Artigos</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/escolas">Para Escolas</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/podcasts">Podcasts</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/politica-de-privacidade" gtm-data="footer_primeira_secao_061">Política de Privacidade</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/termos-de-uso" gtm-data="footer_primeira_secao_062">Termos de Uso</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/sobre" gtm-data="footer_primeira_secao_063">Sobre nós</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/como-funciona" gtm-data="footer_primeira_secao_064">Como Funciona</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/dev-em-t" gtm-data="footer_primeira_secao_065">Dev em &lt;T&gt;</a></li><li class="footer-navegue-lista-link"><a href="https://suporte.alura.com.br/" gtm-data="footer_primeira_secao_066">Perguntas frequentes</a></li><li class="footer-navegue-lista-link"><a href="https://status.alura.com.br/">Status</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/mapa-do-site">Mapa do Site</a></li></ul><h2 class="footer-navegacao-titulo">Fale com a gente</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link whatsapp-icon"><a href="https://api.whatsapp.com/send?phone=5511984510286">Whatsapp</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/contato">Email e telefone</a></li></ul><h2 class="footer-navegacao-titulo">Blog</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link">
+<a href="https://www.alura.com.br/artigos/programacao">
+Programação							</a></li><li class="footer-navegue-lista-link">
+<a href="https://www.alura.com.br/artigos/front-end">
+Front-end							</a></li><li class="footer-navegue-lista-link">
+<a href="https://www.alura.com.br/artigos/data-science">
+Data Science							</a></li><li class="footer-navegue-lista-link">
+<a href="https://www.alura.com.br/artigos/devops">
+DevOps							</a></li><li class="footer-navegue-lista-link">
+<a href="https://www.alura.com.br/artigos/design-ux">
+UX &amp; Design							</a></li><li class="footer-navegue-lista-link">
+<a href="https://www.alura.com.br/artigos/mobile">
+Mobile							</a></li><li class="footer-navegue-lista-link">
+<a href="https://www.alura.com.br/artigos/inovacao-gestao">
+Inovação &amp; Gestão							</a></li></ul></div><div class="footer-card-hotLinks social-mobile"><p class="footer-navegue-lista-link --description">
+<span class="footer-empresa-item">AOVS Sistemas de Informática S.A</span>
+<span class="footer-empresa-item">CNPJ 05.555.382/0001-33</span></p><h2 class="footer-card-hotLinks-titulo">Nossas redes e apps</h2><div class="footer-card-hotLinks-info footer-card-redes">
+<a href="https://www.youtube.com/alura" gtm-data="footer_primeira_secao_065" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="YouTube da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-youtube"><use xlink:href="/svg,1636535197/footer#icon-footer-youtube"></use></svg>
+<span>YouTube</span>
+</a>
+<a href="https://www.facebook.com/AluraCursosOnline/" gtm-data="footer_primeira_secao_066" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Facebook da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-facebook"><use xlink:href="/svg,1636535197/footer#icon-footer-facebook"></use></svg>
+<span>Facebook</span>
+</a>
+<a href="https://twitter.com/aluraonline" gtm-data="footer_primeira_secao_067" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Twitter da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-twitter"><use xlink:href="/svg,1636535197/footer#icon-footer-twitter"></use></svg>
+<span>Twitter</span>
+</a>
+<a href="https://instagram.com/aluraonline" class="footer-card-hotLinks-link" gtm-data="footer_primeira_secao_073" target="_blank" rel="noopener" title="Instagram da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-instagram"><use xlink:href="/svg,1636535197/footer#icon-footer-instagram"></use></svg>
+<span>Instagram</span>
+</a></div><div class="footer-card-hotLinks-info footer-card-mobile">
+<a href="https://play.google.com/store/apps/details?id=br.com.alura.mobi&amp;hl=pt_BR" gtm-data="footer_primeira_secao_069" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Baixar na Google Play Store">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1636535197/footer#icon-footer-googleplay"></use></svg>
+<span>Google Play Store</span>
+</a>
+<a href="https://itunes.apple.com/br/app/alura-cursos-online/id1225776635" gtm-data="footer_primeira_secao_070" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Baixar na AppStore">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1636535197/footer#icon-footer-appstore"></use></svg>
+<span>AppStore</span>
+</a></div></div><div class="footer-column footer-column-cards"><link rel="stylesheet" href="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/activeCampaignNewsletterForm.1636535197.css"><div class="newsletter"><h2 class="newsletter-titulo">Novidades e Lançamentos</h2><form id="newsletter-form__activecampaign" class="newsletter-form" action="https://www.alura.com.br/api/activecampaign" method="POST"><input type="hidden" name="list" value="14">
+<input type="hidden" name="retorno" value="/newsletter-cadastrado"><label for="email-newsletter">Email</label>
+<input type="email" name="email" class="newsletter-input" placeholder="Seu e-mail" id="email-newsletter"><button type="submit" class="newsletter-button buttonForm">Receber</button>
+<span class="newsletter-message-error newsletter-message-error--disabled">Não foi possível assinar a newsletter</span><input type="hidden" name="full_url" value="https://www.alura.com.br/artigos/lidando-com-datas-e-horarios-no-python"><input type="hidden" name="user_agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"><input type="hidden" name="referral" value="https://www.google.com/"></form></div> <script>(function() {
+            function criaCampo(nome, valor, form) {
+                if (valor === null) return;
+
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = nome;
+                input.value = valor;
+
+                form.appendChild(input);
+            }
+
+            function param(name) {
+                var url = location.href;
+                name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+                var regexS = "[\\?&]"+name+"=([^&#]*)";
+                var regex = new RegExp( regexS );
+                var results = regex.exec( url );
+                return results == null ? null : results[1];
+            }
+
+            function showNewsletterError() {
+                document.querySelector('.newsletter-message-error').classList.remove('newsletter-message-error--disabled');
+            }
+
+            function valida() {
+                var isValid = true;
+                var inputList = document.querySelector('#newsletter-form__activecampaign')['list'];
+                var inputEmail = document.querySelector('#newsletter-form__activecampaign')['email'];
+
+                isValid = validaEmail(inputEmail.value) && validaList(inputList.value);
+
+                if(!isValid) {
+                    showNewsletterError();
+                }
+
+                return isValid;
+            }
+
+            function validaList(list) {
+                return list != '-1';
+            }
+
+            function validaEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+
+            var form = document.querySelector('#newsletter-form__activecampaign');
+            if(!form) return;
+
+            criaCampo('utm_source', param('utm_source'), form);
+            criaCampo('utm_campaign', param('utm_campaign'), form);
+            criaCampo('utm_medium', param('utm_medium'), form);
+            criaCampo('utm_term', param('utm_term'), form);
+            criaCampo('utm_content', param('utm_content'), form);
+            criaCampo('full_url', location.href, form);
+            criaCampo('user_agent', navigator.userAgent, form);
+            criaCampo('referral', document.referrer, form);
+
+            form.onsubmit = valida;
+
+        })();</script> <div class="footer-navegue empresa-governo"><h2 class="footer-navegacao-titulo">Alura na sua empresa</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link --description">Desenvolva seu time com apoio da nossa solução</li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/empresas/cases">Cases</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/empresas/comunidade">Comunidade</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/empresas/guias-de-carreira">Guia de Carreira</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/empresas/na-midia">Na Mídia</a></li><li class="footer-navegue-lista-link --description"><a href="https://www.alura.com.br/empresas">Conheça mais</a></li></ul><h2 class="footer-navegacao-titulo">Comunidade</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link"><a href="https://www.scuba.dev.br/" gtm-data="footer_primeira_secao_067">Scuba Dev</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/imersao" gtm-data="footer_primeira_secao_068">Imersões</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/depoimentos" gtm-data="footer_primeira_secao_069">Depoimentos</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/instrutores" gtm-data="footer_primeira_secao_061">Nossos Instrutores</a></li></ul><h2 class="footer-navegacao-titulo">Parceiros</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link --description">
+<img src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/scale-up-endeavor.1636535197.png" alt="Programa de aceleração Scale-Up Endeavor" class="footer-navegue-lista__image" loading="lazy"></li><li class="footer-navegue-lista-link --description --partners">
+Nós, da Alura, somos uma das Scale-Ups selecionadas pela Endeavor, programa de aceleração das empresas que mais crescem no país.</li><li class="footer-navegue-lista-link --description">
+<img src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/google-alumni-2021.1636535197.png" alt="Growth Academy 2021 do Google For Startups" class="footer-navegue-lista__image" loading="lazy"></li><li class="footer-navegue-lista-link --description --partners">
+Fomos uma das 7 startups selecionadas pelo Google For Startups a participar do programa Growth Academy em 2021.</li></ul></div></div><div class="footer-info"><div class="footer-logos">
+<a class="footer-logos-home" gtm-data="footer_primeira_secao_050" href="https://www.alura.com.br/">
+<img src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/alura-logo.1642527450.svg" alt="Alura" class="footer-logo" loading="lazy">
+</a></div><div class="footer-card-hotLinks social-desktop"><p class="footer-navegue-lista-link --description">
+<span class="footer-empresa-item">AOVS Sistemas de Informática S.A</span>
+<span class="footer-empresa-item">CNPJ 05.555.382/0001-33</span></p><h2 class="footer-card-hotLinks-titulo">Nossas redes e apps</h2><div class="footer-card-hotLinks-info footer-card-redes">
+<a href="https://www.youtube.com/alura" gtm-data="footer_primeira_secao_065" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="YouTube da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-youtube"><use xlink:href="/svg,1636535197/footer#icon-footer-youtube"></use></svg>
+<span>YouTube</span>
+</a>
+<a href="https://www.facebook.com/AluraCursosOnline/" gtm-data="footer_primeira_secao_066" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Facebook da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-facebook"><use xlink:href="/svg,1636535197/footer#icon-footer-facebook"></use></svg>
+<span>Facebook</span>
+</a>
+<a href="https://twitter.com/aluraonline" gtm-data="footer_primeira_secao_067" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Twitter da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-twitter"><use xlink:href="/svg,1636535197/footer#icon-footer-twitter"></use></svg>
+<span>Twitter</span>
+</a>
+<a href="https://instagram.com/aluraonline" class="footer-card-hotLinks-link" gtm-data="footer_primeira_secao_073" target="_blank" rel="noopener" title="Instagram da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-instagram"><use xlink:href="/svg,1636535197/footer#icon-footer-instagram"></use></svg>
+<span>Instagram</span>
+</a></div><div class="footer-card-hotLinks-info footer-card-mobile">
+<a href="https://play.google.com/store/apps/details?id=br.com.alura.mobi&amp;hl=pt_BR" gtm-data="footer_primeira_secao_069" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Baixar na Google Play Store">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1636535197/footer#icon-footer-googleplay"></use></svg>
+<span>Google Play Store</span>
+</a>
+<a href="https://itunes.apple.com/br/app/alura-cursos-online/id1225776635" gtm-data="footer_primeira_secao_070" class="footer-card-hotLinks-link" target="_blank" rel="noopener" title="Baixar na AppStore">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1636535197/footer#icon-footer-appstore"></use></svg>
+<span>AppStore</span>
+</a></div></div></div></div></footer><section class="footer_categorias-formacoes"><div class="container"><div class="footer_categorias_wrapper"><h2 class="footer_categorias_title">Cursos</h2><div class="footer_categorias_categorias footer-navegue-lista-link"><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-programacao">Cursos de Programação</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-programacao/logica">
+Lógica										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/python">
+Python										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/php">
+PHP										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/java">
+Java										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/dotnet">
+.NET										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/node-js">
+Node JS										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/linguagem-c">
+C										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/computacao">
+Computação										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/jogos">
+Jogos										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-programacao/internet-das-coisas">
+IoT										</a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-front-end">Cursos de Front-end</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-front-end/front-end">
+HTML, CSS										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-front-end/reactjs">
+React										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-front-end/angular">
+Angular										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-front-end/javascript">
+JavaScript										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-front-end/jquery">
+jQuery										</a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-data-science">Cursos de Data Science</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-data-science/data-science">
+Ciência de dados										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-data-science/business-intelligence">
+BI										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-data-science/sql">
+SQL e Banco de Dados										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-data-science/excel">
+Excel										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-data-science/machine-learning">
+Machine Learning										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-data-science/nosql">
+NoSQL										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-data-science/estatistica">
+Estatística										</a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-devops">Cursos de DevOps</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-devops/aws">
+AWS										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-devops/azure">
+Azure										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-devops/containers">
+Docker										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-devops/seguranca">
+Segurança										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-devops/infraestrutura-como-codigo">
+IaC										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-devops/linux-comandos-e-processos">
+Linux										</a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-design-ux">Cursos de UX &amp; Design</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-design-ux/wwww">
+Photoshop e Illustrator										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-design-ux/ux">
+Usabilidade e UX										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-design-ux/video">
+Vídeo e Motion										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-design-ux/3d">
+3D										</a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-mobile">Cursos de Mobile</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-mobile/react-native">
+React Native										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-mobile/flutter">
+Flutter										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-mobile/ios">
+iOS e Swift										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-mobile/android">
+Android, Kotlin										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-mobile/jogos">
+Jogos										</a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao">Cursos de Inovação &amp; Gestão</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/agilidade">
+Métodos Ágeis										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/softskills-carreira">
+Softskills										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/gestao-corporativa">
+Liderança e Gestão										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/startup-empreendedorismo">
+Startups										</a>
+|																			<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/vendas">
+Vendas										</a></div></div></div></div></div></section><style>@media not all and (min-width: 1000px){
+		.grupoCaelum{
+			display: none;
+		}
+	}
+
+	.grupoCaelum{
+		background: #fff;
+		height: 400px;
+		border-top: 1px solid #EBEBEE;
+	}
+
+	.grupoCaelum .container{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 100%;
+	}
+
+		.grupoCaelum-list{
+			display: flex;
+			list-style: none;
+			width: 60%;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 20px;
+		}
+
+		.grupoCaelum-title{
+			width: 20%;
+		}
+
+		.grupoCaelum-column {
+			display: inline-block;
+			padding-left: 19px;
+			width: 240px;
+			height: 350px;
+			min-width: 160px;
+		}
+			.grupoCaelum-column-title {
+				font-size: 10px;
+				color: #d7e0e5;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin-bottom: 19px;
+			}
+
+			.grupoCaelum-column-list {
+				list-style: none;
+			}
+
+			.column-item-title {
+				font-size: 11px;
+				text-align: center;
+				vertical-align: middle;
+				display: inline-block;
+				margin-left: 6.5px;
+			}
+
+		.grupoCaelum-column:not(:first-child) {
+			border-left: solid 1px #e3e9ed;
+		}
+
+		.grupoCaelum-title {
+			display: inline-block;
+			text-decoration: none;
+			color: #657176;
+			letter-spacing: normal;
+			font-size: 18px;
+			margin-top: 54px;
+		}
+
+	.column-item-logo {
+		width: 30px;
+		height: 30px;
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	.column-item {
+		margin-bottom: 17px;
+	}
+
+	.column-item a{
+		text-decoration: none;
+		color: #657176;
+	}</style><footer class="caelum-footer"><div class="grupoCaelum"><div class="container"><p class="grupoCaelum-title">Grupo Alura</p><ul class="grupoCaelum-list"><li class="grupoCaelum-column"><p class="grupoCaelum-column-title">Educação</p><ul class="grupoCaelum-column-list"><li class="column-item">
+<a target="_blank" href="https://www.caelum.com.br/">
+<svg class="column-item-logo">
+<use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-novo-logo-caelum">
+</use></svg><span class="column-item-title">Caelum</span>
+
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.casadocodigo.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-cdc"></use></svg><span class="column-item-title">Casa do Código</span>
+</a></li></ul></li><li class="grupoCaelum-column"><p class="grupoCaelum-column-title">Educação Online</p><ul class="grupoCaelum-column-list"><li class="column-item">
+<a target="_blank" href="https://www.alura.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-alura"></use></svg><span class="column-item-title">Alura</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.alura.com.br/empresas">
+<svg class="column-item-logo" style="fill: white;"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-alura"></use></svg><span class="column-item-title">Alura Para Empresas</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.aluracursos.com/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-alura"></use></svg><span class="column-item-title">Alura LATAM</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.alurastart.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-alurastart"></use></svg><span class="column-item-title">Alura Start</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.musicdot.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-musicdot"></use></svg><span class="column-item-title">MusicDot</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.aluralingua.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-aluralingua"></use></svg><span class="column-item-title">Alura Língua</span>
+</a></li><li class="column-item">
+<a target="_blank" style="fill: #657176" href="https://www.cursospm3.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-pm3"></use></svg><span class="column-item-title">PM3 - Cursos de Produto</span>
+</a></li></ul></li><li class="grupoCaelum-column"><p class="grupoCaelum-column-title">Comunidade</p><ul class="grupoCaelum-column-list"><li class="column-item">
+<a target="_blank" href="https://hipsters.tech/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-hipsterstech"></use></svg><span class="column-item-title">Hipsters ponto Tech</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://scuba.dev.br/">
+<svg class="column-item-logo" style="fill: #657176"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-scubadev"></use></svg><span class="column-item-title">Scuba Dev</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://layerspontotech.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-layerstech"></use></svg><span class="column-item-title">Layers ponto Tech</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://likeaboss.com.br/">
+<svg class="column-item-logo" style="fill: #657176"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-likeaboss"></use></svg><span class="column-item-title">Like a Boss</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.carreirasemfronteiras.com.br/">
+<svg class="column-item-logo" style="fill: #657176"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-carreira-sem-fronteiras"></use></svg><span class="column-item-title">Carreira sem Fronteiras</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://hipsters.jobs/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-hipstersjobs"></use></svg><span class="column-item-title">Hipsters ponto Jobs</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.guj.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1636535197/caelumFooter#icon-caelumFooter-guj"></use></svg><span class="column-item-title">GUJ</span>
+</a></li></ul></li></ul></div></div></footer> <script>(function(){
+    var match = location.pathname.match(/\/(bf-|black-?friday\/)([^\/]+)/);
+    if (match != null) {
+        var links = document.querySelectorAll('a[href]');
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute('href');
+            if (href[0] === '/') {
+                links[i].setAttribute('href', '/bf-' + match[2] + href);
+            }
+        }
+    }
+})();</script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/jquery.min.js.download"></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/svg4everybody.min.1636535198.js.download" async=""></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/menu.1636535198.js.download" async=""></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/busca.1636535198.js.download" async=""></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/cursos.1636535198.js.download" async=""></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/detect.1636535198.js.download" async=""></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/video.1636535198.js.download" async=""></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/Countdown.1636535198.js.download" async=""></script> <script>var userId = (document.cookie.match('alura.userId=([^;]+)')||[null,null])[1];
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+  	ga('create', 'UA-42101548-1', 'alura.com.br', 'tracker0', {'siteSpeedSampleRate': 50});
+
+	if (userId) ga('tracker0.set', 'userId', userId);
+
+	ga('tracker0.require', 'displayfeatures');
+	ga('tracker0.send', 'pageview');
+  	ga('create', 'UA-42101548-9', 'alura.com.br', 'tracker1', {'siteSpeedSampleRate': 50});
+
+	if (userId) ga('tracker1.set', 'userId', userId);
+
+	ga('tracker1.require', 'displayfeatures');
+	ga('tracker1.send', 'pageview');</script> <script async="" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/analytics.js.download"></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/footer.1636535198.js.download" async=""></script> <script src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/highlight.min.js.download"></script> <script>hljs.initHighlightingOnLoad();</script> <script>(function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1029027,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script> <script type="text/javascript">_linkedin_partner_id = "465017";
+			window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+			window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script> <script type="text/javascript">(function(){var s = document.getElementsByTagName("script")[0];
+			var b = document.createElement("script");
+			b.type = "text/javascript";b.async = true;
+			b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+			s.parentNode.insertBefore(b, s);})();</script> <noscript>
+<img
+height="1" width="1" style="display:none;" alt=""
+src="https://dc.ads.linkedin.com/collect/?pid=465017&fmt=gif" />
+</noscript><script type="text/javascript" id="">elements=document.querySelectorAll("input, select");elements.forEach(function(b,c){b.addEventListener("change",function(a){a=this.getAttribute("name");dataLayer.push({event:"gaEvent",eventCategory:"Formul\u00e1rios",eventAction:"Altera\u00e7\u00e3o",eventLabel:a})})});</script>
+<script type="text/javascript" id="">var key="Think_Again45984$%";function log(a){console.log(a)}function getPars(){var a={};window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(b,c,d){a[c]=d});return a}function userId(a){a=sha256.hmac(key,a);dataLayer.push({event:"userId",userId:a})}var script=document.createElement("script");script.onload=function(){var a=getPars().e;a&&userId(a);a=document.querySelectorAll('[type\x3d"email"]');for(var b=0;b<a.length;b++)a[b].onchange=function(){userId(this.value)}};script.src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js";
+document.head.appendChild(script);</script><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Python datetime_ Lidando com datas e horários _ Alura Cursos Online_files/box-acca23410e696f2ca3087d947271c3d0.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>

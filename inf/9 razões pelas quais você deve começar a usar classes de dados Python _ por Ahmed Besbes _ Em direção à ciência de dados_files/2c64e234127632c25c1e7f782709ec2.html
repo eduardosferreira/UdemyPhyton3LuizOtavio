@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://towardsdatascience.com/media/2c64e234127632c25c1e7f782709ec2d?gif=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>dataclasses_6_3.py – Medium</title><meta name="description" content="Instantly share code, notes, and snippets. You can&#39;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or window. Reload to refresh your session. Reload to refresh your session."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./78c1ecdbb648f5382c83ba0c667.download" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-52ad9619c757909e2463e.css"><div id="gist111878070" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-dataclasses_6_3-py" class="file my-2">
+    
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-python  ">
+
+      
+<div class="js-check-bidi js-blob-code-container blob-code-content">
+
+  <template class="js-file-alert-template"></template>
+<template class="js-line-alert-template"></template>
+
+  <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="Python" data-tagsearch-path="dataclasses_6_3.py">
+        <tbody><tr>
+          <td id="file-dataclasses_6_3-py-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-dataclasses_6_3-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-en">@<span class="pl-s1">dataclass</span></span></td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-dataclasses_6_3-py-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">class</span> <span class="pl-v">Person</span>:</td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-dataclasses_6_3-py-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">first_name</span>: <span class="pl-s1">str</span> <span class="pl-c1">=</span> <span class="pl-s">"Ahmed"</span></td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-dataclasses_6_3-py-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">last_name</span>: <span class="pl-s1">str</span> <span class="pl-c1">=</span> <span class="pl-s">"Besbes"</span></td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-dataclasses_6_3-py-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">age</span>: <span class="pl-s1">int</span> <span class="pl-c1">=</span> <span class="pl-c1">30</span></td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-dataclasses_6_3-py-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">job</span>: <span class="pl-s1">str</span> <span class="pl-c1">=</span> <span class="pl-s">"Data Scientist"</span></td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-dataclasses_6_3-py-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-dataclasses_6_3-py-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">first_person</span> <span class="pl-c1">=</span> <span class="pl-v">Person</span>()</td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-dataclasses_6_3-py-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">second_person</span> <span class="pl-c1">=</span> <span class="pl-v">Person</span>()</td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-dataclasses_6_3-py-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+          <td id="file-dataclasses_6_3-py-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-en">print</span>(<span class="pl-s1">first_person</span> <span class="pl-c1">==</span> <span class="pl-s1">second_person</span>)</td>
+        </tr>
+        <tr>
+          <td id="file-dataclasses_6_3-py-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+          <td id="file-dataclasses_6_3-py-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># True ✅</span></td>
+        </tr>
+  </tbody></table>
+</div>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/ahmedbesbes/78c1ecdbb648f5382c83ba0c66722bf6/raw/a2a5d903a55f3a43d0e654a0e924724672647a31/dataclasses_6_3.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/ahmedbesbes/78c1ecdbb648f5382c83ba0c66722bf6#file-dataclasses_6_3-py">
+          dataclasses_6_3.py
+        </a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height);var elements = document.getElementsByClassName("gist-data"); for (var i = 0; i < elements.length; i++) {elements[i].style.overflow = "visible"}resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script><script defer="" src="./v652eace1692a40cfa3763df669d7439c163" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon="{&quot;rayId&quot;:&quot;6db779054c016aa8&quot;,&quot;token&quot;:&quot;0b5f665943484354a59c39c6833f7078&quot;,&quot;version&quot;:&quot;2021.12.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+</body></html>

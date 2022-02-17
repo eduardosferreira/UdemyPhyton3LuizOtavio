@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://ffmpeg.org/documentation.html -->
+<html lang="pt" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Documentação</title>
+    <link rel="stylesheet" href="./Documentação_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Documentação_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Documentação_files/simple-sidebar.css">
+    <link rel="stylesheet" href="./Documentação_files/style.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="https://ffmpeg.org/main.rss" rel="alternate" type="application/rss+xml" title="ffmpeg.org">
+    <link rel="shortcut icon" href="https://ffmpeg.org/favicon.ico">
+  <link type="text/css" rel="stylesheet" charset="UTF-8" href="./Documentação_files/translateelement.css"></head>
+  <body>
+
+    <div id="wrapper">
+
+      <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href="https://ffmpeg.org/">
+              <img src="./Documentação_files/ffmpeg3d_white_20.png" alt="FFmpeg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              FFmpeg</font></font></a>
+          </li>
+          <li><a href="https://ffmpeg.org/about.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cerca de</font></font></a></li>
+          <li><a href="https://ffmpeg.org/index.html#news"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Notícias</font></font></a></li>
+          <li><a href="https://ffmpeg.org/download.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Download</font></font></a></li>
+          <li><a href="https://ffmpeg.org/documentation.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação</font></font></a></li>
+          <li><a href="https://ffmpeg.org/contact.html#MailingLists"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Comunidade</font></font></a>
+            <ul>
+              <li><a href="https://ffmpeg.org/contact.html#MailingLists"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Listas de correspondência</font></font></a></li>
+              <li><a href="https://ffmpeg.org/contact.html#IRCChannels"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IRC</font></font></a></li>
+              <li><a href="https://ffmpeg.org/contact.html#Forums"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fóruns</font></font></a></li>
+              <li><a href="https://ffmpeg.org/bugreports.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Relatório de erros</font></font></a></li>
+              <li><a href="https://trac.ffmpeg.org/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wiki</font></font></a></li>
+            </ul>
+          </li>
+          <li><a href="https://ffmpeg.org/developer.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desenvolvedores</font></font></a>
+            <ul>
+              <li><a href="https://ffmpeg.org/download.html#get-sources"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Código fonte</font></font></a>
+              </li><li><a href="https://ffmpeg.org/developer.html#Contributing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contribuir</font></font></a></li>
+              <li><a href="http://fate.ffmpeg.org/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DESTINO</font></font></a></li>
+              <li><a href="http://coverage.ffmpeg.org/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cobertura de código</font></font></a></li>
+            </ul>
+          </li>
+          <li><a href="https://ffmpeg.org/documentation.html#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mais</font></font></a>
+            <ul>
+              <li><a href="https://ffmpeg.org/donations.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                  Doar</font></font><span style="color: #e55; font-size: 0.8em; margin-left: -10px"><i class="fa fa-heart"></i></span></a></li>
+              <li><a href="https://ffmpeg.org/consulting.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contratar desenvolvedores</font></font></a></li>
+              <li><a href="https://ffmpeg.org/contact.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contato</font></font></a></li>
+              <li><a href="https://ffmpeg.org/security.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Segurança</font></font></a></li>
+              <li><a href="https://ffmpeg.org/legal.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jurídico</font></font></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="page-content-wrapper">
+        <header class="content-header">
+          <h1>
+            <a id="menu-toggle" href="https://ffmpeg.org/documentation.html#" class="btn btn-success"><i class="fa fa-reorder"></i></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Documentação          </font></font></h1>
+        </header>
+      <div class="page-content inset">
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+  A documentação a seguir é regenerada todas as noites e corresponde à </font></font><a href="https://ffmpeg.org/download.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">revisão mais recente do FFmpeg</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> . </font><font style="vertical-align: inherit;">Consulte sua documentação instalada localmente para versões mais antigas.
+</font></font></p>
+
+<br><br>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="well well-with-icon" id="command-line">
+      <span class="pull-right"><i class="fa fa-5x fa-fw fa-terminal"></i></span>
+      <h3><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação das ferramentas de linha de comando</font></font></strong></h3>
+      <ul>
+        <li><a href="https://ffmpeg.org/ffmpeg.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffmpeg</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : </font><font style="vertical-align: inherit;">ferramenta </font></font><tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffmpeg</font></font></tt><font style="vertical-align: inherit;"></font></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-all.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffmpeg-all</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : </font><font style="vertical-align: inherit;">ferramenta </font></font><tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffmpeg e componentes FFmpeg</font></font></tt><font style="vertical-align: inherit;"></font></li>
+        <li><a href="https://ffmpeg.org/ffplay.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffplay</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : </font><font style="vertical-align: inherit;">ferramenta </font></font><tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffplay</font></font></tt><font style="vertical-align: inherit;"></font></li>
+        <li><a href="https://ffmpeg.org/ffplay-all.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffplay-all</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : ferramenta </font></font><tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffplay</font></font></tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> e componentes FFmpeg</font></font></li>
+        <li><a href="https://ffmpeg.org/ffprobe.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffprobe</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : </font><font style="vertical-align: inherit;">ferramenta </font></font><tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffprobe</font></font></tt><font style="vertical-align: inherit;"></font></li>
+        <li><a href="https://ffmpeg.org/ffprobe-all.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffprobe-all</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : ferramenta </font></font><tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ffprobe</font></font></tt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> e componentes FFmpeg</font></font></li>
+      </ul>
+    </div>
+  </div> <!-- col -->
+  <div class="col-md-6">
+    <div class="well well-with-icon" id="components">
+      <span class="pull-right"><i class="fa fa-5x fa-fw fa-sitemap"></i></span>
+      <h3><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação de componentes</font></font></strong></h3>
+      <ul>
+        <li><a href="https://ffmpeg.org/ffmpeg-utils.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Serviços de utilidade pública</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-scaler.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dimensionamento de vídeo e conversor de formato de pixel</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-resampler.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Reamostrador de áudio</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-codecs.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Codificadores e decodificadores (codecs)</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-bitstream-filters.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Filtros de fluxo de bits</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-formats.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Muxers e demuxers (formatos)</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-protocols.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Protocolos</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-devices.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dispositivos de entrada e saída</font></font></a></li>
+        <li><a href="https://ffmpeg.org/ffmpeg-filters.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Filtros</font></font></a></li>
+      </ul>
+    </div>
+  </div> <!-- col -->
+</div> <!-- row -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="well well-with-icon" id="libraries">
+      <span class="pull-right"><i class="fa fa-5x fa-fw fa-cogs"></i></span>
+      <h3><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação das Bibliotecas</font></font></strong></h3>
+      <ul>
+        <li><a href="https://ffmpeg.org/libavutil.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">libavutil</font></font></a></li>
+        <li><a href="https://ffmpeg.org/libswscale.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">libswscale</font></font></a></li>
+        <li><a href="https://ffmpeg.org/libswresample.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">libswresample</font></font></a></li>
+        <li><a href="https://ffmpeg.org/libavcodec.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">libavcodec</font></font></a></li>
+        <li><a href="https://ffmpeg.org/libavformat.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">formato libav</font></font></a></li>
+        <li><a href="https://ffmpeg.org/libavdevice.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">dispositivo libav</font></font></a></li>
+        <li><a href="https://ffmpeg.org/libavfilter.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">filtro libav</font></font></a></li>
+      </ul>
+    </div>
+  </div> <!-- col -->
+  <div class="col-md-6">
+    <div class="well well-with-icon" id="more">
+      <span class="pull-right"><i class="fa fa-5x fa-fw fa-file-text-o"></i></span>
+      <h3><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação geral</font></font></strong></h3>
+<ul>
+  <li><a href="https://ffmpeg.org/faq.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">perguntas frequentes</font></font></a></li>
+  <li><a href="https://ffmpeg.org/general.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bibliotecas, formatos, codecs ou recursos externos suportados</font></font></a></li>
+  <li><a href="https://ffmpeg.org/platform.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Informações específicas da plataforma</font></font></a></li>
+  <li><a href="https://ffmpeg.org/developer.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação do desenvolvedor</font></font></a></li>
+  <li><a href="https://ffmpeg.org/git-howto.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Git How-To</font></font></a></li>
+  <li><a href="https://ffmpeg.org/fate.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ambiente de teste automatizado FATE FFmpeg</font></font></a></li>
+</ul>
+</div>
+</div> <!-- col -->
+</div> <!-- row -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="well well-with-icon">
+      <span class="pull-right"><i class="fa fa-5x fa-fw fa-puzzle-piece"></i></span>
+      <h3><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação da API</font></font></strong></h3>
+      <ul>
+        <li><a href="https://ffmpeg.org/doxygen/trunk/index.html">Doxygen documentation</a> for current
+          trunk (regenerated nightly); documentation for the
+          <a href="https://ffmpeg.org/doxygen/4.1/index.html">4.1</a>,
+          <a href="https://ffmpeg.org/doxygen/4.0/index.html">4.0</a>,
+          <a href="https://ffmpeg.org/doxygen/3.4/index.html">3.4</a>,
+          <a href="https://ffmpeg.org/doxygen/3.3/index.html">3.3</a>,
+          <a href="https://ffmpeg.org/doxygen/3.2/index.html">3.2</a>,
+          <a href="https://ffmpeg.org/doxygen/3.1/index.html">3.1</a>,
+          <a href="https://ffmpeg.org/doxygen/3.0/index.html">3.0</a>,
+          <a href="https://ffmpeg.org/doxygen/2.8/index.html">2.8</a>,
+          <a href="https://ffmpeg.org/doxygen/2.7/index.html">2.7</a>,
+          <a href="https://ffmpeg.org/doxygen/2.6/index.html">2.6</a>,
+          <a href="https://ffmpeg.org/doxygen/2.5/index.html">2.5</a>,
+          <a href="https://ffmpeg.org/doxygen/2.4/index.html">2.4</a>,
+          <a href="https://ffmpeg.org/doxygen/2.3/index.html">2.3</a>,
+          <a href="https://ffmpeg.org/doxygen/2.2/index.html">2.2</a>,
+          <a href="https://ffmpeg.org/doxygen/2.1/index.html">2.1</a>,
+          <a href="https://ffmpeg.org/doxygen/2.0/index.html">2.0</a>,
+          <a href="https://ffmpeg.org/doxygen/1.2/index.html">1.2</a>,
+          <a href="https://ffmpeg.org/doxygen/1.1/index.html">1.1</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">,
+           </font></font><a href="https://ffmpeg.org/doxygen/1.0/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1,0</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ,
+           </font></font><a href="https://ffmpeg.org/doxygen/0.11/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0,11</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ,
+           </font></font><a href="https://ffmpeg.org/doxygen/0.10/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0,10</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ,
+           </font></font><a href="https://ffmpeg.org/doxygen/0.9/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0,9</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ,
+           </font></font><a href="https://ffmpeg.org/doxygen/0.8/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0,8</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ,
+           </font></font><a href="https://ffmpeg.org/doxygen/0.7/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0,7</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ,
+           </font></font><a href="https://ffmpeg.org/doxygen/0.6/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0,6</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> e
+           </font></font><a href="https://ffmpeg.org/doxygen/0.5/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0,5</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ramos também está disponível.</font></font></li>
+      </ul>
+    </div>
+  </div> <!-- col -->
+  <div class="col-md-6">
+    <div class="well well-with-icon">
+      <span class="pull-right"><i class="fa fa-5x fa-fw fa-users"></i></span>
+      <h3><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Documentação Contribuida pela Comunidade</font></font></strong></h3>
+      <ul>
+        <li><a href="https://trac.ffmpeg.org/wiki"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wiki oficial do FFmpeg</font></font></a></li>
+        <li><a href="https://trac.ffmpeg.org/wiki/BooksAndOtherExternalResources"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Livros e outros recursos externos</font></font></a></li>
+      </ul>
+    </div>
+  </div> <!-- col -->
+</div> <!-- row -->
+
+          <p class="text-right"><small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hospedagem fornecida por </font></font><a href="https://telepoint.bg/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">telepoint.bg</font></font></a><small></small></small></p><small><small>
+        </small></small></div><small><small> <!-- page-content-inset -->
+      </small></small></div><small><small> <!-- page-content-wrapper -->
+    </small></small></div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./Documentação_files/translate_24dp.png" width="20" height="20" alt="Google Tradutor"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texto original</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Sugerir uma tradução melhor</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><small><small> <!-- wrapper -->
+
+    <script src="./Documentação_files/jquery.min.js.download"></script>
+    <script src="./Documentação_files/bootstrap.min.js.download"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("active");
+      });
+    </script>
+
+  
+
+</small></small><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>

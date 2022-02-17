@@ -22,5 +22,6 @@
         "-p",
         "test*.py"
     ],
-    "python.testing.pytestEnabled": false
+    "python.testing.pytestEnabled": false,
+    "git.ignoreLimitWarning": true
  }

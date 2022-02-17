@@ -1,0 +1,38 @@
+
+SCRIPT_UNIFICADO
+### Inicio do processo ###
+
+15/01/2021 16:10:41 [0]: INICIO >>                                              
+15/01/2021 16:10:41 [0]: CP >> AADtr4AKfAAMkDkAAL >>  [0]: Memoria:  >>  [0]:   
+Inicializacao >> 15/01/2021 16:10:41 [0]: INICIO >>                             
+15/01/2021 16:10:42 [0]: SANEA 13/12/2018 >> 15/01/2021 16:10:41 [0]: CP >>     
+AADtr4AKfAAMkDkAAL >>  [0]: Memoria:  >>  [0]: Inicializacao >> 15/01/2021      
+16:10:41 [0]: INICIO >>                                                         
+15/01/2021 16:30:09 [4]: FIM >>  [4]: Processados COMMIT >>  : 4 | NF : 0 | INF 
+: 0 | CLI : 0 >>  [4]: prcts_insere_process_log: 0 >> 15/01/2021 16:30:09 [4]:  
+COMMIT; >> tratar cli: AAFyrPAB2AACzxoAAX >> tratar nf: AAF0cTABjAAPdidAAa >>   
+[4]: R2015_6 >> tratar inf: AAF4M0ACCAAPJqUAAC >> tratar nf: AAF0cTABjAAPdidAAZ 
+>>  [3]: R2015_6 >> tratar inf: AAF4M0ACCAAPJqUAAB >> tratar cli:               
+AAFyrBAB4AADENGAAP >> tratar nf: AAF0cTABjAAPdi8AAT >>  [2]: R2015_6 >> tratar  
+inf: AAF4M0ACCAAPJrnAAS >> tratar nf: AAF0cTABjAAPdiXAAN >>  [1]: R2015_6 >>    
+tratar inf: AAF4M0ACCAAPJrPAAP >> 15/01/2021 16:10:42 [0]: SANEA 13/12/2018 >>  
+15/01/2021 16:10:41 [0]: CP >> AADtr4AKfAAMkDkAAL >>  [0]: Memoria:  >>  [0]:   
+Inicializacao >> 15/01/2021 16:10:41 [0]: INICIO >>                             
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:19:28.09
+Processado
+
+Rollback complete.
+
+Elapsed: 00:00:00.01
+
+1 row updated.
+
+Elapsed: 00:00:00.00
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+Processado

@@ -1,0 +1,54 @@
+
+SCRIPT_UNIFICADO
+### Inicio do processo ###
+
+15/01/2021 16:10:56 [0]: INICIO >>                                              
+15/01/2021 16:10:56 [0]: CP >> AADtr4AKfAAMkDkAAK >>  [0]: Memoria:  >>  [0]:   
+Inicializacao >> 15/01/2021 16:10:56 [0]: INICIO >>                             
+15/01/2021 16:10:56 [0]: SANEA 12/12/2018 >> 15/01/2021 16:10:56 [0]: CP >>     
+AADtr4AKfAAMkDkAAK >>  [0]: Memoria:  >>  [0]: Inicializacao >> 15/01/2021      
+16:10:56 [0]: INICIO >>                                                         
+15/01/2021 16:30:17 [26]: FIM >>  [26]: Processados COMMIT >>  : 26 | NF : 0 |  
+INF : 0 | CLI : 0 >>  [26]: prcts_insere_process_log: 0 >> 15/01/2021 16:30:17  
+[26]: COMMIT; >> tratar cli: AAFyrWAB4AACpvPAAF >> tratar nf: AAF0cSABjAAPeDjAAi
+>>  [26]: R2015_6 >> tratar inf: AAF4MzACCAAPKNnAAN >> tratar cli:              
+AAFyrPAB4AADEsNAAN >> tratar nf: AAF0cSABjAAPeCrAAQ >>  [25]: R2015_6 >> tratar 
+inf: AAF4MzACCAAPKNDAAD >>  [24]: R2015_6 >> tratar inf: AAF4MzACCAAPKN+AAf >>  
+[23]: R2015_6 >> tratar inf: AAF4MzACCAAPKNDAAE >>  [22]: R2015_6 >> tratar inf:
+AAF4MzACCAAPKNDAAA >>  [21]: R2015_6 >> tratar inf: AAF4MzACCAAPKNmAAV >>  [20]:
+R2015_6 >> tratar inf: AAF4MzACCAAPKNDAAH >>  [19]: R2015_6 >> tratar inf:      
+AAF4MzACCAAPKNDAAG >>  [18]: R2015_6 >> tratar inf: AAF4MzACCAAPKNDAAF >>  [17]:
+R2015_6 >> tratar inf: AAF4MzACCAAPKNDAAC >>  [16]: R2015_6 >> tratar inf:      
+AAF4MzACCAAPKNDAAB >> tratar cli: AAFyrNAB8AACm7BAAb >> tratar nf:              
+AAF0cSABjAAPeD3AAj >>  [15]: R2015_6 >> tratar inf: AAF4MzACCAAPKNKAAz >> tratar
+nf: AAF0cSABjAAPeD3AAc >>  [14]: R2015_6 >> tratar inf: AAF4MzACCAAPKNKAAs >>   
+tratar cli: AAFyrLACPAAC1RvAAY >> tratar nf: AAF0cSABjAAPeD1AAN >>  [13]:       
+R2015_6 >> tratar inf: AAF4MzACCAAPKNiAAY >> tratar nf: AAF0cSABjAAPeD1AAM >>   
+[12]: R2015_6 >> tratar inf: AAF4MzACCAAPKNiAAX >> tratar cli:                  
+AAFyrLACMAADzzUAAF >> tratar nf: AAF0cSABjAAPeD7AAK >>  [11]: R2015_6 >> tratar 
+inf: AAF4MzACCAAPKNiAAB >> tratar nf: AAF0cSABjAAPeD7AAJ >>  [10]: R2015_6 >>   
+tratar inf: AAF4MzACCAAPKNiAAA >> tratar cli: AAFyrCACAAAB7AqAAO >> tratar nf:  
+AAF0cSABjAAPeDSAAA >>  [9]: R2015_6 >> tratar inf: AAF4MzACCAAPKNCAAd >>  [8]:  
+R2015_6 >> tratar inf: AAF4MzACCAAPKNCAAa >>  [7]: R2015_6 >> tratar inf:       
+AAF4MzACCAAPKNCAAZ >>  [6]: R2015_6 >> tratar inf: AAF4MzACCAAPKNCAAc >>  [5]:  
+R2015_6 >> tratar inf: AAF4MzACCAAPKNCAAb >> tratar nf: AAF0cSABjAAPeDOAAl >>   
+[4]: R2015_6 >> tratar inf: AAF4MzACCAAPKNCAAV >>  [3]: R2015_6 >> tratar inf:  
+AAF4MzACCAAPKNCAAY >>  [2]: R2015_6 >> tratar inf: AAF4MzACCAAPKNCAAX >>        
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:19:21.12
+Processado
+
+Rollback complete.
+
+Elapsed: 00:00:00.00
+
+1 row updated.
+
+Elapsed: 00:00:00.02
+
+Commit complete.
+
+Elapsed: 00:00:00.02
+Processado

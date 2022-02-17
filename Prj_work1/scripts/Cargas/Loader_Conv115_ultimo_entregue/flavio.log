@@ -1,0 +1,95 @@
+
+SQL*Loader: Release 12.2.0.1.0 - Production on Mon Jan 10 14:48:26 2022
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   flavio.ctl
+Data File:      /portaloptrib/LEVCV115/SP/16/05/TBRA/0001/SERIE/16000256/ULTIMA_ENTREGA/teste.txt
+  Bad File:     teste.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 9999999
+Bind array:     1000 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table GFCARGA.TSH_MESTRE_CONV_115_ENT, loaded from every logical record.
+Insert option in effect for this table: APPEND
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+ID_SERIE_LEVANTAMENTO               FIRST     1           CHARACTER            
+    SQL string for column : " '16000256' "
+UF_FILIAL                            NEXT     1           CHARACTER            
+    SQL string for column : " 'SP' "
+VOLUME                               NEXT     1           CHARACTER            
+    SQL string for column : " '2' "
+LINHA                                                     RECNUM
+CNPJ_CPF                             1:14    14           CHARACTER            
+    SQL string for column : "TRIM(:CNPJ_CPF)"
+IE                                  15:28    14           CHARACTER            
+    SQL string for column : "TRIM(:IE)"
+RAZAO_SOCIAL                        29:63    35           CHARACTER            
+    SQL string for column : "TRIM(:RAZAO_SOCIAL)"
+UF                                  64:65     2           CHARACTER            
+CLASSE_CONS                         66:66     1           CHARACTER            
+TIPO_UTILIZ                         67:67     1           CHARACTER            
+GRUPO_TENSAO                        68:69     2           CHARACTER            
+CADG_COD                            70:81    12           CHARACTER            
+DATA_EMISSAO                        82:89     8           CHARACTER            
+    SQL string for column : "to_date(:DATA_EMISSAO, 'YYYYMMDD') "
+MODELO                              90:91     2           CHARACTER            
+SERIE                               92:94     3           CHARACTER            
+NUMERO_NF                          95:103     9           CHARACTER            
+HASH_COD_NF                       104:135    32           CHARACTER            
+VALOR_TOTAL                       136:147    12           ZONED DECIMAL (12, 2)
+BASE_ICMS                         148:159    12           ZONED DECIMAL (12, 2)
+VALOR_ICMS                        160:171    12           ZONED DECIMAL (12, 2)
+ISENTAS_ICMS                      172:183    12           ZONED DECIMAL (12, 2)
+OUTROS_VALORES                    184:195    12           ZONED DECIMAL (12, 2)
+SIT_DOC                           196:196     1           CHARACTER            
+MES_REFERENCIA                    197:200     4           CHARACTER            
+REF_ITEM_NF                       201:209     9           CHARACTER            
+TERMINAL_TELEF                    210:221    12           CHARACTER            
+    SQL string for column : "TRIM(:TERMINAL_TELEF)"
+IND_CAMPO_01                      222:222     1           CHARACTER            
+TIPO_CLIENTE                      223:224     2           CHARACTER            
+SUB_CLASSE                        225:226     2           CHARACTER            
+TERMINAL_PRINC                       NEXT     1           CHARACTER            
+    SQL string for column : " '' "
+CNPJ_EMIT                            NEXT     1           CHARACTER            
+    SQL string for column : " '' "
+NUM_FAT                              NEXT     1           CHARACTER            
+    SQL string for column : " '' "
+VALOR_FAT                            NEXT     1           CHARACTER            
+    SQL string for column : " '' "
+BRANCOS2                             NEXT     1           CHARACTER            
+    SQL string for column : " '' "
+HASH_CODE_ARQ                     227:258    32           CHARACTER            
+
+value used for ROWS parameter changed from 1000 to 619
+
+Table GFCARGA.TSH_MESTRE_CONV_115_ENT:
+  1000000 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 255647 bytes(619 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:       1000000
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Mon Jan 10 14:48:26 2022
+Run ended on Mon Jan 10 15:00:02 2022
+
+Elapsed time was:     00:11:36.57
+CPU time was:         00:00:08.60

@@ -1,0 +1,43 @@
+
+SCRIPT_UNIFICADO
+### Inicio do processo ###
+
+15/01/2021 16:10:56 [0]: INICIO >>                                              
+15/01/2021 16:10:56 [0]: CP >> AADtr4AKfAAMkD0AAH >>  [0]: Memoria:  >>  [0]:   
+Inicializacao >> 15/01/2021 16:10:56 [0]: INICIO >>                             
+15/01/2021 16:10:56 [0]: SANEA 26/12/2018 >> 15/01/2021 16:10:56 [0]: CP >>     
+AADtr4AKfAAMkD0AAH >>  [0]: Memoria:  >>  [0]: Inicializacao >> 15/01/2021      
+16:10:56 [0]: INICIO >>                                                         
+15/01/2021 16:30:38 [10]: FIM >>  [10]: Processados COMMIT >>  : 10 | NF : 0 |  
+INF : 0 | CLI : 0 >>  [10]: prcts_insere_process_log: 0 >> 15/01/2021 16:30:38  
+[10]: COMMIT; >> tratar cli: AAFyrUAB2AACkyYAAZ >> tratar nf: AAF0cgAB0AALjvzAAd
+>>  [10]: R2015_6 >> tratar inf: AAF4NBABLAANDGVAAd >>  [9]: R2015_6 >> tratar  
+inf: AAF4NBABLAANDGVAAe >>  [8]: R2015_6 >> tratar inf: AAF4NBABLAANDGVAAc >>   
+tratar cli: AAFyrRAB7AACYW3AAK >> tratar nf: AAF0cgAB0AALjvzAAT >>  [7]: R2015_6
+>> tratar inf: AAF4NBABLAANDG1ABP >> tratar cli: AAFyrKACMAADzpaAAY >> tratar   
+nf: AAF0cgAB0AALjvPAAB >>  [6]: R2015_6 >> tratar inf: AAF4NBABLAANDGoAAw >>    
+[5]: R2015_6 >> tratar inf: AAF4NBABLAANDGoAAy >>  [4]: R2015_6 >> tratar inf:  
+AAF4NBABLAANDGoAAv >>  [3]: R2015_6 >> tratar inf: AAF4NBABLAANDGoAAx >> tratar 
+cli: AAFyq9AB8AACfMaAAJ >> tratar nf: AAF0cgAB0AALjuTAAD >>  [2]: R2015_6 >>    
+tratar inf: AAF4NBABLAANDGqAAz >>  [1]: R2015_6 >> tratar inf:                  
+AAF4NBABLAANDGqAA0 >> 15/01/2021 16:10:56 [0]: SANEA 26/12/2018 >> 15/01/2021   
+16:10:56 [0]: CP >> AADtr4AKfAAMkD0AAH >>  [0]: Memoria:  >>  [0]: Inicializacao
+>> 15/01/2021 16:10:56 [0]: INICIO >>                                           
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:19:42.00
+Processado
+
+Rollback complete.
+
+Elapsed: 00:00:00.00
+
+1 row updated.
+
+Elapsed: 00:00:00.02
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+Processado
